@@ -18,7 +18,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   min-height: 100vh;
-  background: linear-gradient(45deg, #ffaf00, #bb02ff);
+  background: #222;
   background-attachment: fixed;
 }
 

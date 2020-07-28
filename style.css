@@ -7,6 +7,63 @@
   font-family: 'Poppins', 'Noto Sans KR', sans-serif;
 }
 
+.back {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #222;
+  font-size: 8em;
+  font-weight: 800;
+}
+
+.back .box {
+  position: relative;
+  width: 800px;
+}
+
+.back h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: #9ab4c9;
+  text-align: center;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.back h2:nth-child(2) {
+  background: #222;
+  z-index: 2;
+  overflow: hidden;
+  color: #ecca69;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
+}
+
+.back h2:nth-child(2):hover {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.back h2:nth-child(1):hover ~ h2 {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
 .sideNav {
   height: 100%;
   width: 0;
@@ -39,7 +96,6 @@
 
 .sideOpen,
 .sideClose {
-  position: absolute;
   border: none;
   background: transparent;
   outline: none;
@@ -47,6 +103,7 @@
 }
 
 .sideOpen {
+  position: fixed;
   left: 25px;
   font-size: 30px;
   top: 20px;
@@ -60,6 +117,7 @@
 }
 
 .sideClose {
+  position: absolute;
   top: 15px;
   font-size: 36px;
   right: 30px;

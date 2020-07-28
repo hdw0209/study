@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap");
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -19,7 +19,7 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #f9d56e;
+  background: #222;
   padding: 20px;
 }
 
@@ -127,7 +127,7 @@ section .container .user .formBx form input {
   font-weight: 300;
 }
 
-section .container .user .formBx form input[type="submit"] {
+section .container .user .formBx form input[type='submit'] {
   max-width: 100px;
   background: #677eff;
   color: #fff;
