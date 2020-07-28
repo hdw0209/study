@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+}
+
+.sideNav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sideNav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.sideNav a:hover {
+  color: #f1f1f1;
+}
+
+.sideOpen,
+.sideClose {
+  position: absolute;
+  border: none;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.sideOpen {
+  left: 25px;
+  font-size: 30px;
+  top: 20px;
+  color: #222;
+  background: #fff;
+  z-index: 99998;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+}
+
+.sideClose {
+  top: 15px;
+  font-size: 36px;
+  right: 30px;
+  margin-left: 50px;
+  color: #fff;
+}
+
+#main {
+  -webkit-transition: margin-left 0.5s;
+  transition: margin-left 0.5s;
+}

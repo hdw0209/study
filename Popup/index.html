@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Popup</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body id="main">
+        <div include-html="/sidemenu.html"></div>
+        <div class="container" id="blur">
+            <div class="content">
+                <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolorem quidem eum, corporis hic saepe consequuntur dicta modi odit molestiae temporibus unde mollitia ut error molestias nisi deleniti obcaecati numquam?</h2>
+                <img src="img.jpg" alt="" />
+                <a href="#" onClick="toggle()"> Read More</a>
+            </div>
+        </div>
+        <div id="popup">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, quis facilis dolores tempore vel aperiam saepe ad. Omnis provident voluptate voluptas, dolores inventore earum repudiandae quaerat magni, amet totam corporis.</p>
+            <a href="#" onClick="toggle()">Close</a>
+        </div>
+        <script>
+            function toggle() {
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active');
+                var popup = document.getElementById('popup');
+                popup.classList.toggle('active');
+            }
+        </script>
+        <script src="/common.js"></script>
+    </body>
+</html>
