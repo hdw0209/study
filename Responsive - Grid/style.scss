@@ -22,6 +22,10 @@ body {
     margin: 40px;
     grid-auto-flow: dense;
     grid-gap: 10px;
+    @media (min-width: 1500px) {
+        grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+        grid-template-rows: minmax(auto, auto);
+    }
     @media (max-width: 990px) {
         grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
         grid-template-rows: minmax(auto, auto);
@@ -36,10 +40,6 @@ body {
         text-align: center;
         color: #fff;
         transition: 0.5s;
-        @media (max-width: 600px) {
-            grid-column: unset !important;
-            grid-row: unset !important;
-        }
         &:nth-child(1) {
             grid-column: span 2;
             grid-row: span 1;
@@ -58,6 +58,11 @@ body {
         }
         &:hover {
             background: #e91e63;
+        }
+
+        @media (max-width: 600px) {
+            grid-column: unset !important;
+            grid-row: unset !important;
         }
         img {
             position: relative;
