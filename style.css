@@ -38,7 +38,7 @@
   margin: 0;
   padding: 0;
   width: 100%;
-  color: #9ab4c9;
+  color: #fff;
   text-align: center;
   text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
@@ -47,7 +47,7 @@
   background: #222;
   z-index: 2;
   overflow: hidden;
-  color: #ecca69;
+  color: #ffd717;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
@@ -78,20 +78,46 @@
   padding-top: 60px;
 }
 
-.sideNav a {
+.sideNav li {
   padding: 8px 8px 8px 32px;
+}
+
+.sideNav a {
+  position: relative;
   text-decoration: none;
   font-size: 16px;
   color: #818181;
-  display: block;
+  display: inline-block;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   font-weight: 500;
+  -webkit-transform-origin: left;
+          transform-origin: left;
   white-space: nowrap;
 }
 
-.sideNav a:hover {
+.sideNav a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #ffd717;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.sideNav a:hover, .sideNav a.active {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   color: #f1f1f1;
+}
+
+.sideNav a:hover::before, .sideNav a.active::before {
+  width: 100%;
 }
 
 .sideOpen,
@@ -123,6 +149,10 @@
   right: 30px;
   margin-left: 50px;
   color: #fff;
+}
+
+.sideClose:hover {
+  color: #ffd717;
 }
 
 #main {

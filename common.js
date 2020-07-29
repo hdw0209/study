@@ -40,3 +40,14 @@ function closeNav() {
     document.getElementById('sideNav').style.width = '0';
     document.getElementById('main').style.marginLeft = '0';
 }
+
+function setActive() {
+    linkObj = document.getElementById('sideNav').getElementsByTagName('a');
+    for (i = 0; i < linkObj.length; i++) {
+        if (document.location.href.indexOf(linkObj[i].href) >= 0) {
+            linkObj[i].classList.add('active');
+        }
+    }
+}
+
+window.onload = setActive;

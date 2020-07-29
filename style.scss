@@ -29,14 +29,14 @@
         margin: 0;
         padding: 0;
         width: 100%;
-        color: #9ab4c9;
+        color: #fff;
         text-align: center;
         text-shadow: 0 5px 15px rgba(#000, 0.5);
         &:nth-child(2) {
             background: #222;
             z-index: 2;
             overflow: hidden;
-            color: #ecca69;
+            color: #ffd717;
             transition: 0.5s;
             clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
             &:hover {
@@ -60,17 +60,40 @@
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    a {
+    li {
         padding: 8px 8px 8px 32px;
+    }
+    a {
+        position: relative;
         text-decoration: none;
         font-size: 16px;
         color: #818181;
-        display: block;
+        display: inline-block;
         transition: 0.3s;
         font-weight: 500;
+        transform-origin: left;
         white-space: nowrap;
-        &:hover {
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #ffd717;
+            transition: 0.5s;
+            z-index: -1;
+            border-radius: 20px;
+        }
+
+        &:hover,
+        &.active {
+            transform: scale(1.1);
+
             color: #f1f1f1;
+            &::before {
+                width: 100%;
+            }
         }
     }
 }
@@ -101,6 +124,9 @@
     right: 30px;
     margin-left: 50px;
     color: #fff;
+    &:hover {
+        color: #ffd717;
+    }
 }
 #main {
     transition: margin-left 0.5s;
