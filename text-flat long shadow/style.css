@@ -18,7 +18,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   min-height: 100vh;
-  background: #00fff3;
+  background: #222;
 }
 
 #text {
@@ -27,6 +27,6 @@ body {
   outline: none;
   width: 100%;
   text-align: center;
-  text-shadow: 1px 1px 0 #01ded3;
+  text-shadow: 1px 1px 0 #333;
   color: #fff;
 }
