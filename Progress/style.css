@@ -18,7 +18,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   min-height: 100vh;
-  background: #000;
+  background: #222;
 }
 
 .container {
@@ -37,9 +37,11 @@ body {
   display: flex;
   margin: 20px 0;
   padding: 24px 10px 18px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#616161), color-stop(10%, #333), to(#222));
-  background: linear-gradient(#616161 0%, #333 10%, #222);
-  border-radius: 8px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4b4b4b), color-stop(5%, #333), to(#222));
+  background: linear-gradient(#4b4b4b 0%, #333 5%, #222);
+  border-radius: 30px;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.5s;
   transition: 0.5s;
   overflow: hidden;
@@ -124,7 +126,7 @@ body {
   background: linear-gradient(45deg, #ffee54, #ff00ca);
 }
 
-.box {
+.circle {
   position: relative;
   width: 300px;
   height: 400px;
@@ -141,28 +143,29 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: #fff;
+  background: #333;
+  border-radius: 30px;
   -webkit-box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
           box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
 }
 
-.box .percent {
+.circle .percent {
   position: relative;
   width: 150px;
   height: 150px;
 }
 
-.box .percent svg {
+.circle .percent svg {
   position: relative;
   width: 150px;
   height: 150px;
 }
 
-.box .percent svg circle {
+.circle .percent svg circle {
   width: 150px;
   height: 150px;
   fill: none;
-  stroke-width: 10;
+  stroke-width: 8;
   stroke: #000;
   -webkit-transform: translate(5px, 5px);
           transform: translate(5px, 5px);
@@ -171,17 +174,17 @@ body {
   stroke-linecap: round;
 }
 
-.box .percent svg circle:nth-child(1) {
+.circle .percent svg circle:nth-child(1) {
   stroke-dashoffset: 0;
-  stroke: #f3f3f3;
+  stroke: #2c2c2c;
 }
 
-.box .percent svg circle:nth-child(2) {
+.circle .percent svg circle:nth-child(2) {
   stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
   stroke: #03a9f4;
 }
 
-.box .percent .number {
+.circle .percent .number {
   position: absolute;
   top: 0;
   left: 0;
@@ -199,17 +202,21 @@ body {
   color: #111;
 }
 
-.box .percent .number h2 {
+.circle .percent .number h2 {
   font-size: 48px;
-  color: #999;
+  color: #fff;
+  font-weight: normal;
 }
 
-.box .percent .number h2 span {
-  font-size: 24px;
+.circle .percent .number h2 span {
+  font-size: 20px;
 }
 
-.box .percent .text {
-  padding: 10px 0 0;
-  color: #999;
-  font-weight: 700;
+.circle .text {
+  padding: 50px 0 0;
+  font-weight: 600;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
