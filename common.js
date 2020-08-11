@@ -32,8 +32,8 @@ function includeHTML() {
 includeHTML();
 
 function openNav() {
-    document.getElementById('sideNav').style.width = '250px';
-    document.getElementById('main').style.marginLeft = '250px';
+    document.getElementById('sideNav').style.width = '300px';
+    document.getElementById('main').style.marginLeft = '300px';
 }
 
 function closeNav() {
