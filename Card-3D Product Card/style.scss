@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+}
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #131313;
+}
+.container {
+    img {
+        &.color2 {
+            filter: hue-rotate(90deg);
+        }
+        &.color3 {
+            filter: hue-rotate(250deg);
+        }
+    }
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1200px;
+    transform-style: preserve-3d;
+    .box {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        margin: 40px;
+        background: #232323;
+        border-radius: 20px;
+        transform-style: preserve-3d;
+        &::before {
+            content: 'NIKE';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 6em;
+            font-weight: 900;
+            color: #fff;
+            font-style: italic;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        &::after {
+            content: 'SHOES';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 5em;
+            font-weight: 900;
+            color: #fff;
+            font-style: italic;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        &:hover::before,
+        &:hover::after {
+            opacity: 0.04;
+        }
+        .name {
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            color: #fff;
+            width: 100%;
+            transform-style: preserve-3d;
+            transform: translate3d(0, 0, 75px);
+            transition: 0.5s;
+            opacity: 0;
+            z-index: 10;
+        }
+        &:hover .name {
+            top: 40px;
+            opacity: 1;
+        }
+        .buy {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform-style: preserve-3d;
+            transform: translate3d(-50%, 0, 75px);
+            color: #fff;
+            background: #333;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.5s;
+            opacity: 0;
+            z-index: 10;
+        }
+        &:hover .buy {
+            bottom: 30px;
+            opacity: 1;
+        }
+        .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            transition: 0.5s;
+            background: #fff;
+            transform-style: preserve-3d;
+            z-index: 10;
+            opacity: 1;
+            transform: translate3d(-50%, -50%, 0px);
+        }
+        .product {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            max-width: 300px;
+            transition: 0.5s;
+            z-index: 11;
+            transform-style: preserve-3d;
+            transform: translate3d(-50%, -50%, 50px) rotate(-15deg) scaleX(-1);
+        }
+        &:hover .product {
+            transform: translate3d(-50%, -50%, 100px) rotate(-15deg) scaleX(-1);
+        }
+        &:nth-child(1) .circle,
+        &:nth-child(1) .buy {
+            background: #9bdc28;
+        }
+        &:nth-child(2) .circle,
+        &:nth-child(2) .buy {
+            background: #26e6e2;
+        }
+        &:nth-child(3) .circle,
+        &:nth-child(3) .buy {
+            background: #df5bdc;
+        }
+    }
+}
