@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>GSAP-scrollTrigger</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body id="main">
+        <div include-html="/sidemenu.html"></div>
+        <section>
+            <h2>Let It Be Forgotten</h2>
+        </section>
+        <div class="box">
+            <h2 class="text1">Let it be forgotten as a flow'r is forgotten,</h2>
+            <h2 class="text2">Forgotten as a fire that once was singing gold.</h2>
+            <h2 class="text3">Let it be forgotten forever and ever.</h2>
+            <img src="img01.jpg" class="img" />
+        </div>
+        <div class="box2">
+            <h2 class="text4">Time is a kind friend, he will make us old.</h2>
+            <h2 class="text5">If anyone should ask say it was forgotten</h2>
+            <h2 class="text6">Long and long ago. As a flow'r, as a fire, as a hushed foot-fall</h2>
+            <h2 class="text7">In a long forgotten snow.</h2>
+        </div>
+    </body>
+    <script src="/common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: '.box',
+                start: 'center center',
+                end: 'bottom top',
+                markers: false,
+                scrub: true,
+                pin: true,
+            },
+        })
+            .from('.text1', { x: innerWidth * 1 })
+            .from('.text2', { x: innerWidth * -1 })
+            .from('.text3', { x: innerWidth * 1 })
+            .from('.img', { y: 300, rotate: 180, opacity: 0 });
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: '.box2',
+                start: 'center center',
+                end: 'bottom top',
+                markers: false,
+                scrub: true,
+                pin: true,
+            },
+        })
+            .from('.box2', { opacity: 0 })
+            .from('.text4', { y: 300, opacity: 0 })
+            .from('.text5', { y: 300, opacity: 0 })
+            .from('.text6', { y: 300, opacity: 0 })
+            .from('.text7', { y: 300, opacity: 0 });
+    </script>
+</html>
