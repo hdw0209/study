@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Menu-Animated Sliding Menu</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body id="main">
+        <div include-html="/sidemenu.html"></div>
+        <div class="container">
+            <nav>
+                <div id="marker"></div>
+                <ul>
+                    <li><a href="#">menu 01</a></li>
+                    <li><a href="#">menu 02</a></li>
+                    <li><a href="#">menu 03</a></li>
+                    <li><a href="#">menu 04</a></li>
+                    <li><a href="#">menu 05</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <script>
+            var marker = document.querySelector('#marker');
+            var item = document.querySelectorAll('ul a');
+
+            function indicator(e) {
+                marker.style.left = e.offsetLeft + 'px';
+                marker.style.width = e.offsetWidth + 'px';
+            }
+            item.forEach((link) => {
+                link.addEventListener('mouseover', (e) => {
+                    indicator(e.target);
+                });
+            });
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <script src="/common.js"></script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Progress</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body id="main">
+        <div include-html="/sidemenu.html"></div>
+        <div class="circle">
+            <div class="percent">
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle cx="70" cy="70" r="70" style="--num: 40"></circle>
+                </svg>
+                <div class="number">
+                    <h2>40<span>%</span></h2>
+                </div>
+            </div>
+            <h2 class="text">Progress</h2>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <script src="/common.js"></script>
+    </body>
+</html>

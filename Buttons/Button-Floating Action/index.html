@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Button-Floating Action</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body id="main">
+        <div include-html="/sidemenu.html"></div>
+        <div class="action" onclick="actionToggle();">
+            <button>+</button>
+            <ul>
+                <li><span class="iconify" data-icon="mdi:facebook" data-inline="false"></span><a href="#">Share on Facebook</a></li>
+                <li><span class="iconify" data-icon="mdi:instagram" data-inline="false"></span><a href="#">Share on Instagram</a></li>
+                <li><span class="iconify" data-icon="mdi:pinterest" data-inline="false"></span><a href="#">Share on Pinterest</a></li>
+                <li><span class="iconify" data-icon="mdi:twitter" data-inline="false"></span> <a href="#">Share on Twitter</a></li>
+                <li><span class="iconify" data-icon="mdi:telegram" data-inline="false"></span><a href="#">Share on Telegram</a></li>
+            </ul>
+        </div>
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <script src="/common.js"></script>
+        <script>
+            function actionToggle() {
+                var action = document.querySelector('.action');
+                action.classList.toggle('active');
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Video</title>
+        <!-- <link rel="stylesheet" href="/style.css" /> -->
+        <style>
+            body {
+                height: 100vh;
+                padding: 0;
+                margin: 0;
+            }
+            svg {
+                width: 100%;
+            }
+            svg mask rect {
+                fill: #fff;
+            }
+            svg > rect {
+                fill: #fff;
+                mask: url(#mask);
+            }
+            video {
+                position: absolute;
+                top: 0;
+                left: 0%;
+                width: 100%;
+                height: 389px;
+
+                z-index: -1;
+                object-fit: cover;
+                object-position: center;
+            }
+            div {
+                height: 389px;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920px" height="1080px" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <mask id="mask" x="0" y="0" width="1920" height="1080">
+                        <rect x="0" y="0" width="1920" height="1080" />
+                        <path d="M968,389V238a10,10,0,0,1,10-10h942V389ZM0,389V105H942a10,10,0,0,1,10,10V379a10,10,0,0,1-10,10ZM978,211a10,10,0,0,1-10-10V37a10,10,0,0,1,10-10h942V211ZM330,89a10,10,0,0,1-10-10V10A10,10,0,0,1,330,0H942a10,10,0,0,1,10,10V79a10,10,0,0,1-10,10Z" />
+                    </mask>
+                </defs>
+                <rect x="0" y="0" width="1920" height="1080" />
+            </svg>
+            <video id="video" autoplay="autoplay" muted="muted" preload="auto" loop="loop">
+                <source src="ibs.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </body>
+</html>
