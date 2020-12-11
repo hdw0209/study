@@ -1,90 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>GSAP</title>
-        <link rel="stylesheet" href="./style.css" />
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div class="nav-closed">
-                    <h3>portfolio</h3>
-                    <ul class="nav-links">
-                        <li class="nav-button">Shop</li>
-                        <li>Blog</li>
-                        <li>Contact</li>
-                    </ul>
-                </div>
-                <div class="nav-open">
-                    <div class="clothing">
-                        <h2>Clothes</h2>
-                        <ul>
-                            <li><a href="#">Hats</a></li>
-                            <li><a href="#">Swimsuit</a></li>
-                            <li><a href="#">Swimsuit</a></li>
-                            <li><a href="#">Swimsuit</a></li>
-                        </ul>
-                    </div>
-                    <div class="nav-images">
-                        <img src="./images/hoodie.jpeg" alt="" />
-                        <img src="./images/hats.jpeg" alt="" />
-                    </div>
-                </div>
-            </nav>
-            <img src="./images/long-cover.jpg" alt="" class="cover" />
-            <h1 class="cover-date">04/08/2020</h1>
-        </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAP</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="card" id="card">
+      <h1>Your guide to the hot zone</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus
+        voluptatem obcaecati labore culpa, nisi cupiditate soluta ipsam aperiam
+        eaque, hic dolor doloribus veniam, sint nemo eum cum adipisci illum
+        ipsa?
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+      </p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"></script>
 
-        <script>
-            const navButton = document.querySelector('.nav-button');
-            const navOpen = document.querySelector('.nav-open');
-            const tl = gsap.timeline({ paused: true, reversed: true });
+    <script>
+      var card = document.getElementById('card');
+      var rule = CSSRulePlugin.getRule(".card::before");
+      var rule2 = CSSRulePlugin.getRule(".card::after");
 
-            tl.to('.cover', 1, {
-                width: '60%',
-                ease: 'power2.out',
-            })
-                .to(
-                    'nav',
-                    1,
-                    {
-                        height: '100%',
-                        ease: 'power2.out',
-                    },
-                    '-=.5'
-                )
-                .fromTo(
-                    '.nav-open',
-                    0.5,
-                    {
-                        opacity: 0,
-                        x: 50,
-                        ease: 'power2.out',
-                    },
-                    {
-                        opacity: 1,
-                        x: 0,
-                        onComplete: function () {
-                            navOpen.style.pointerEvents = 'auto';
-                        },
-                    }
-                );
+      var tl = gsap.timeline({defaults: {ease: "power2.inOut"}})
+      tl.to(rule,{
+          width:'100%'
+      })
+      tl.to(rule2,{
+          width:'100%'
+      },"-=.3")
+      tl.to('h1',{
+          color:'white'
+      },"-=.7")
+      tl.to('p',{
+          'clipPath':'circle(140% at 0% 100%)',
+          'transform':'translateX(0)',
+          ease:Back.easeOut.config(4),
+          
+        },"-=.3")
+      tl.pause();
 
-            navButton.addEventListener('click', (e) => {
-                if (tl.isActive()) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
-                    return false;
-                }
-                toggleTween(tl);
-            });
-            function toggleTween(tween) {
-                tween.reversed() ? tween.play() : tween.reverse();
-            }
-        </script>
-    </body>
+      card.addEventListener('mouseenter', () => {
+            tl.play();
+      })      
+      card.addEventListener('mouseleave', () => {
+            tl.reverse();
+      })
+
+    </script>
+  </body>
 </html>
