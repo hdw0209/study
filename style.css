@@ -4,7 +4,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
 }
 
 html {
@@ -153,7 +153,7 @@ nav .navBg.active {
   color: #fff;
 }
 
-.back {
+.mainBack {
   width: 100%;
   min-height: 100vh;
   display: -webkit-box;
@@ -170,12 +170,12 @@ nav .navBg.active {
   font-weight: 800;
 }
 
-.back .box {
+.mainBack .box {
   position: relative;
   width: 800px;
 }
 
-.back h2 {
+.mainBack h2 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -189,7 +189,7 @@ nav .navBg.active {
   text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.back h2:nth-child(2) {
+.mainBack h2:nth-child(2) {
   background: #222;
   z-index: 2;
   overflow: hidden;
@@ -200,12 +200,12 @@ nav .navBg.active {
           clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
 }
 
-.back h2:nth-child(2):hover {
+.mainBack h2:nth-child(2):hover {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-.back h2:nth-child(1):hover ~ h2 {
+.mainBack h2:nth-child(1):hover ~ h2 {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
           clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
@@ -225,7 +225,7 @@ nav .navBg.active {
 
 .gg-calendar-dates::after,
 .gg-calendar-dates::before {
-  content: '';
+  content: "";
   display: block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
