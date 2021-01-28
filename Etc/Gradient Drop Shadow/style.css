@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.container .box {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .box h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 3em;
+  color: #fff;
+}
+
+.container .box::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(25px);
+          filter: blur(25px);
+  -webkit-transform: translateY(30px) scale(0.9);
+          transform: translateY(30px) scale(0.9);
+}
+
+.container .box:nth-child(1), .container .box:nth-child(1)::before {
+  background: linear-gradient(135deg, #f403d1, #64b5f6);
+}
+
+.container .box:nth-child(2), .container .box:nth-child(2)::before {
+  background: linear-gradient(135deg, #ffec61, #f321d7);
+}
+
+.container .box:nth-child(3), .container .box:nth-child(3)::before {
+  background: linear-gradient(135deg, #25ff72, #2196f3);
+}
