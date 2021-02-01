@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif !important;
+}
+li,
+ol {
+    list-style: none;
+}
+.container {
+    position: relative;
+    min-height: 100vh;
+    background: #fff;
+    line-height: 1.5;
+    padding: 50px;
+}
+
+.modal-body > ul > li {
+    font-size: 19px;
+    font-weight: 700;
+    padding: 20px 0 15px 0;
+
+    > p {
+        font-size: 16px;
+        font-weight: 400;
+        margin: 15px 0;
+    }
+}
+
+.modal-body > ul > li > ol {
+    font-size: 16px;
+    margin-top: 10px;
+
+    > li {
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.4;
+        font-weight: 300;
+        margin: 3px 0;
+    }
+}
+
+.modal-body ol > li > ul {
+    font-size: 16px;
+    line-height: 1.4;
+    padding-left: 23px;
+    font-weight: 300;
+    margin-top: 10px;
+
+    li {
+        position: relative;
+        margin: 3px 0;
+        padding-left: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: -17px;
+            top: 10px;
+            width: 3px;
+            height: 3px;
+            border-radius: 3px;
+            background: #666;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    }
+}
+
+.modal-body ol {
+    counter-reset: num;
+
+    > li {
+        position: relative;
+        padding-left: 23px;
+    }
+}
+
+.modal-body ol > li::before {
+    content: counter(num);
+    counter-increment: num 1;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 13px;
+    height: 13px;
+    border: solid 1px #777;
+    border-radius: 13px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 13px;
+    vertical-align: 1px;
+    margin: 0 3px 0 0;
+}
